@@ -1,0 +1,224 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+}
+:root{
+	--bg-color: #ad967c;
+	--main-color: #e55472;
+	--text-color: #010101;
+	--2nd-color: #434343;
+	--other-color: #666666;
+	--succes-color: #2ecc71;;
+    --error-color: #e74c3c;
+	--big-font: 5rem;
+	--h2-font: 2.3rem;
+	--p-font: 1.3rem;
+}
+
+/* --------------------- FORM POP UP --------------------- */
+.form-popup {
+	position: fixed;
+	overflow: scroll;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: block;
+	/*flex-direction: column;*/
+	height: 100%;
+	background-color: rgb(0, 0, 0, 0.7);	
+	border: none;
+	z-index: 1000;
+	}
+
+    .form-container h2{
+        margin-left: 5px;
+        color: var(--2nd-color);
+    }
+
+	.form-container {
+	margin: auto;
+	margin-top: 1.5%;
+	z-index: 1000;
+	width: 40%;
+	padding: 15px;
+	border-radius: 15px;
+	background-color: white;
+	}
+
+    .form-container h1{
+    color: #434343;
+    padding-top: 10px;
+    text-align: center;
+    }
+
+    .form-container p{
+    text-align: justify;
+    font-size: 14px;
+    padding: 0 20px 0 20px;
+    }
+
+    .form-container .btn-back{
+    margin-left: 50px;
+    }
+
+    .form-container #container2 {
+        margin-right: 5px;
+    }
+
+	/* Full-width input fields */
+	.form-container input[type=text], .form-container input[type=email],
+	.form-container input[type=address], .form-container input[type=postal],
+    .form-container input[type=tel], .form-container input[type=date],
+    .form-container input[type=time]  {
+	padding: 15px;
+	width: 98%;
+	margin: 5px 0 5px 5px;
+	border: none;
+	border-radius: 4px;
+	background: #f1f1f1;
+    cursor: pointer;
+	}
+
+
+	.form-container textarea[type=comment] {
+	padding: 15px;
+	width: 98%;
+	height: 50%;
+	margin: 5px;
+	border: none;
+	border-radius: 4px;
+	background: #f1f1f1;
+	}
+
+	.form-container label {
+	position: absolute;
+	color: #010101;
+	padding: 15px;
+	width: 30%;
+	margin: 0 0 0 10px;
+    transform: translate(26%, -300%);
+	border: none;
+	}
+
+	/* When the inputs get focus, do something */
+	.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+	}
+
+	/* Set a style for the submit button */
+	.form-container .btn {
+	background-color: #434343;
+	border-radius: 10px;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 49%;
+	margin-bottom:10px;
+	opacity: 0.8;
+	}
+
+	/* Add a red background color to the cancel button */
+	.form-container .cancel {
+	border-radius: 10px;
+	background-color: rgb(121, 33, 33);
+	}
+
+	/* Add some hover effects to buttons */
+	.form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+	}
+
+	hr {
+		height: 1px;
+		background-color: #434343;
+		margin: 10px 5px 20px 5px;
+	}
+
+
+
+/* Radio Buttons - Flower Bouquet Quantity -------------------------------- */
+
+.form-container .radio-buttons {
+	position: relative;
+    transform: translate(0, -200%);
+	left: 25%;
+	font-size: 14px;
+	color: #434343;
+}
+
+.form-container .radio-buttons  input[type="radio"] {
+    transform: translate(0, 20%);
+}
+
+
+.price {
+    margin-right: 180px;
+    padding: 0;
+}
+
+.price hr {
+    transform: translateY(-3000%);
+    margin-bottom: 30px;
+}
+
+.price label {
+	position: relative;
+	color: #010101;
+    bottom: 60px;
+    width: 50px;
+	}
+
+.price #total{
+    margin-left: 70px;
+    color: #434343;
+}
+
+.price #output {
+    margin-left: 67px;
+}
+
+.form-container .delivery-terms{
+    margin-bottom: 10px;
+    margin-left: 25px;
+    color: #e74c3c;
+}
+
+.form-container .delivery-terms span{
+    text-decoration: underline;
+    cursor: pointer;
+    
+}
+
+.form-container .delivery-terms input[type="checkbox"] {
+    transform: translateY(20%);
+    cursor: pointer;
+    height: 1.25em;
+    width: 1.25em;
+}
+
+select {
+    padding: 15px;
+	width: 98%;
+	margin: 5px 0 5px 5px;
+	border: none;
+	border-radius: 4px;
+	background: #f1f1f1;
+    cursor: pointer;
+}
+
+.form-container .image {
+    width: 20%;
+    height: 160px;
+}
+.form-container .image img{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers4U</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+   <!-- Link to the external Style Sheet -->
+   <link id="pagestyle" rel="stylesheet" type="text/css" href="css/products.css">
+
+   <script type="text/javascript">
+	// Get the selected theme from localStorage or use the default theme
+	var selectedTheme = localStorage.getItem('selectedTheme') || 'css/products.css';
+
+	if ((localStorage.getItem('selectedTheme') == 'css/mainstyle.css') || (localStorage.getItem('selectedTheme') == 'css/aboutUs.css')|| (localStorage.getItem('selectedTheme') == 'css/success.css'))
+	{
+		var selectedTheme = 'css/products.css';
+	}
+	else if ((localStorage.getItem('selectedTheme') == 'css/valentines.css') || (localStorage.getItem('selectedTheme') == 'css/v_aboutUs.css')|| (localStorage.getItem('selectedTheme') == 'css/v_success.css'))
+	{
+		var selectedTheme = 'css/v_products.css';
+	}
+
+	// Set the stylesheet to the selected theme
+	document.getElementById('pagestyle').setAttribute('href', selectedTheme);
+
+	// Function to change the theme
+	function change_theme(sheet) {
+	// Set the stylesheet to the selected theme
+	document.getElementById('pagestyle').setAttribute('href', sheet);
+	// Store the selected theme in localStorage
+	localStorage.setItem('selectedTheme', sheet);
+	}
+
+</script>
+
+  <link rel="shortcut icon" href="img/Logo/favicon.ico"/>
+  <title>Flowers4U</title>
+
+</head>
+
+
+<body>
+	
+	<div class="navbar">
+        <div class="inner-width">
+            <img class="logo" src="img/Logo/logo.png">
+            
+            <!--Navbar Menu Section-->
+
+            <div class="nav"><!--navnar-menu-->
+                <ul>
+                    <li><a href="https://angeladrous.github.io/submitform/aboutUs.html">About Us</a></li>
+                    <li><a id="mybtn" href="#">Change Theme ▾</a></li>
+                        <ul class="dropdown">
+                            <li><a href="#" onclick="change_theme('css/products.css')">Default</a></li><br></br>
+                            <li><a href="#" onclick="change_theme('css/v_products.css')">Valentine's</a></li>
+                        </ul>
+                    <li><a href="https://angeladrous.github.io/submitform/products.html">Products</a></li>
+                    <li><a href="https://angeladrous.github.io/submitform/index.html">Home</a></li>
+                </ul>
+                <!--https://angeladrous.github.io/submitform/index.html-->
+            </div>
+        </div>
+    </div>
+
+	
+    <!---Home Section--->
+	<section class="home">
+		<div class="home-text">
+			<h1>The perfect bouquet, <br> for every occasion</h1>
+			<img src="img/Extras/hearts.png" width="340px" height="260px">
+			<p>Vestibulum convallis velit accumsan tempus justo, </br> eget, auctor tortor nunc euismod ac suscipit nunc porta nec.</p>
+			<a class="btn" href="#bouquets">Pick a Bouquet</a>
+		</div>
+	</section>
+
+	
+	<!--Order Form Contents-->
+	<div class="form-popup" id="myForm" style="display: none;">
+		<!--Import formsubmit to send email-->
+		<form class="form-container"  action="https://formsubmit.co/b5e891d6838acb0a94c01fc8077ce278 " method="POST">
+			<!--Honeypot -->
+			<input type="text" name="_honey" style="display: none;">
+
+			<!--Disable Capcha-->
+			<input type="hidden" name="_captcha" value="false">
+
+			<!--Success Page-->
+			<input type="hidden" name="_next" value="https://angeladrous.github.io/submitform/success.html">
+
+
+			<!--Form Contants Input Values-->
+			<h1>Bouquet Order Form</h1></br></br>
+			
+			<h2>Contact Information</h2>
+			<input type="text" placeholder="Enter your first name" id="name" name="First&nbsp;Name" onkeydown="return /[a-z]/i.test(event.key)" minlength="3" maxlength="20" required>
+			<input type="text" placeholder="Enter your surname" id="surname" name="Last&nbsp;Name" onkeydown="return /[a-z]/i.test(event.key)" minlength="3" maxlength="20" required></br>
+			<input type="email" placeholder="Enter your email address" id="email" name="Email&nbsp;Address" required>
+			<input type="tel" placeholder="Enter your phone number" id="phone" name="Phone&nbsp;Number" required minlength="8" maxlength="12" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></br>
+			<hr id="form-line">
+
+			<h2>Shipping Address</h2>
+			<input type="text" placeholder="Street Address" name="Street&nbsp;Address" required>
+			<input type="text" placeholder="City" name="City" onkeydown="return /[a-z]/i.test(event.key)" required>
+			<input type="text" placeholder="State" name="State" onkeydown="return /[a-z]/i.test(event.key)" required>
+			<input type="postal" placeholder="Postal/Zip Code" name="Postal/Zip&nbsp;Code" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></br>
+			<hr id="form-line">
+
+			<h2>Delivery Details</h2>
+			<input type="date" placeholder="Delivery Date" name="Delivery&nbsp;Date" required min="2023-02-01" max="2023-12-30">
+			<input type="time" placeholder="Delivery Hour" name="Delivery&nbsp;Time" required min="09:00" max="18:00">
+			<textarea type="comment" placeholder="Please type any additional requests you may have..." name="Additional&nbsp;Requests" maxlength="150"></textarea>
+
+			<!--Dropdown Box for Occasion selections-->
+			<select name="Occasion" id="occasion" required>
+				<option  selected disabled value="">Select Occasion</option>
+				<option value="Birthday">Birthday</option>
+				<option value="Anniversary">Anniversary</option>
+				<option value="Valentine's display">Valentine's Day</option>
+				<option value="Baby Shower">Baby Shower</option>
+				<option value="Graduation">Graduation</option>
+				<option value="Get Well">Get Well</option>
+			  </select>
+			<hr id="form-line">
+
+			<h2>Bouquet Selection</h2>
+			
+			<!--Create bouquet images for the Order Form with id-->
+			<div class="image">
+				<img id="img1" src="img/Bouquets/bouquet-1.png" width="20%" style="display: none;">
+				<img id="img2" src="img/Bouquets/bouquet-2.png" width="20%" style="display: none;">
+				<img id="img3" src="img/Bouquets/bouquet-3.png" width="20%" style="display: none;">
+				<img id="img4" src="img/Bouquets/bouquet-4.png" width="20%" style="display: none;">
+				<img id="img5" src="img/Bouquets/bouquet-5.png" width="20%" style="display: none;">
+				<img id="img6" src="img/Bouquets/bouquet-6.png" width="20%" style="display: none;">
+				<img id="img7" src="img/Bouquets/bouquet-7.png" width="20%" style="display: none;">
+				<img id="img8" src="img/Bouquets/bouquet-8.png" width="20%" style="display: none;">
+				<img id="img9" src="img/Bouquets/bouquet-9.png" width="20%" style="display: none;">
+				<img id="img10" src="img/Bouquets/bouquet-10.png" width="20%" style="display: none;">
+				<img id="img11" src="img/Bouquets/bouquet-11.png" width="20%" style="display: none;">
+				<img id="img12" src="img/Bouquets/bouquet-12.png" width="20%" style="display: none;">
+				<img id="img13" src="img/Bouquets/bouquet-13.png" width="20%" style="display: none;">
+				<img id="img14" src="img/Bouquets/bouquet-14.png" width="20%" style="display: none;">
+				<img id="img15" src="img/Bouquets/bouquet-15.png" width="20%" style="display: none;">
+				</div>
+
+			<label for="details"><b>Select Flower Quantity</b></label>
+
+			<!--Radio Buttons for quantity/price-->
+			<div class="radio-buttons">
+				<input type="radio" name="Quantity" value="$ 25.00" onclick="getValue()">
+				<b>10</b> Flower Bouquet</br>
+				
+				<input type="radio" name="Quantity" value="$ 42.00" onclick="getValue()">
+				<b>20</b> Flower Bouquet</br>
+
+				<input type="radio" name="quantity" value="$ 70.00" onclick="getValue()">
+				<b>30</b> Flower Bouquet</br>
+			</div>
+			
+			<!--Outputs the price of bouquet and delivery-->
+			<div class="price">
+				<hr>
+				<label for="price"><b>Price</b></label>
+				<label id="output"></label>
+				
+				</br></br>
+				<label><b>Delivery fee</b></label>
+				<label>  $ 05.00 +</label>
+				<hr>
+
+				<label for="total"><b>Total</b></label>
+				<b><label id="total"></label></b></br></br>
+				<label>* Payment upon delivery</label>
+				<p id="occasion-result"></p>
+			</div>
+
+			<!--Delivery Terms link-->
+			<div class="delivery-terms">
+				<input id="check" type="checkbox" name="Delivery&nbsp;Terms" required> Accept the <span onclick="openDeliveryForm()">delivery terms</span> in order to proceed *
+			</div>
+
+			<!--Close & Submit Buttons-->
+			</br>
+				<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+				<button type="submit" class="btn">Submit</button>
+				
+		</form>
+	
+	</div>
+
+	<!--Delivery Terms Form Contents-->
+	<div class="form-popup" id="myDeliveryForm" style="display: none;" >
+		<form class="form-container" id="container2">
+
+			<h1>Delivery Terms</h1></br></br>
+			<p>liquam pharetra vel sapien at feugiat. Praesent cursus blandit egestas. Nam fermentum non risus quis dapibus. Curabitur malesuada quam vulputate feugiat eleifend. Etiam interdum nisi non venenatis interdum. Etiam nisi urna, consequat aliquet tempor vitae, condimentum aliquet metus. Vestibulum pharetra justo eu neque imperdiet, quis varius massa fringilla. Duis egestas tempus felis id semper. Nullam eu gravida est, ac imperdiet felis. Ut nulla tellus, congue sit amet lectus at, placerat congue lacus. Donec aliquam malesuada mauris eget fringilla. Ut vitae sapien at purus convallis dictum. Nam hendrerit turpis augue, eget lacinia magna sodales ut. In fringilla semper facilisis. Morbi vel ultricies odio, at lacinia justo. Sed sed tincidunt mauris, et iaculis nunc.</br></br>
+
+				Cras aliquet rhoncus urna, in gravida lectus scelerisque sit amet. Fusce eu luctus lacus. Maecenas convallis bibendum pretium. Etiam id dui finibus, elementum ante id, viverra est. Suspendisse sollicitudin dui non nibh viverra, vitae pharetra felis euismod.</br></br> Pellentesque a eros ante. Nunc ultricies metus at velit pharetra eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisl felis, tristique et libero sed, hendrerit pellentesque odio. Duis vel sapien ipsum. Suspendisse ac orci bibendum, vulputate purus eu, faucibus nunc. Etiam maximus porta blandit. Aenean eget odio lacus.</br></br>
+				
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac sem vulputate, gravida elit id, consequat massa. Vivamus commodo, nulla eu suscipit feugiat, eros nulla accumsan libero, vel porttitor nulla arcu ut orci. Fusce fringilla efficitur est, et fermentum sem.</br></br>Cras tristique porta nunc. Nullam facilisis enim eu ante vehicula ultrices. Sed tincidunt ac erat eget porta. </p>
+			</br>
+				<button type="button" class="btn" onclick="closeDeliveryForm()">Go Back</button>
+		</form>
+	
+	</div>
+
+	<!-- Js - Functions -->
+	<script>
+
+		// Function to get the value of the selected radio button (Flower Quantity)
+	   function getValue(){
+		   var data = document.getElementsByName("Quantity");
+		   var i, num;
+		   for(i=0; i<=data.length; i++){
+			   if(data[i].checked){
+				   if(i==0){
+					   num = "$ 30.00";
+				   }
+				   else if (i==1){
+					   num = "$ 47.00";
+				   }
+				   else{
+					   num = "$ 75.00";
+				   }
+				   
+				   document.getElementById("output").innerHTML = data[i].value;
+				   localStorage.setItem("Flower_Quantity", data[i].value);
+				   document.getElementById("total").innerHTML = num;
+
+			   }
+		   }
+	   }
+
+	   //Function to open the Order Form based on image
+	   	function openForm1() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img1").style.display = "block";				
+		}
+		function openForm2() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img2").style.display = "block";				
+		}
+		function openForm3() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img3").style.display = "block";				
+		}
+		function openForm4() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img4").style.display = "block";				
+		}
+		function openForm5() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img5").style.display = "block";				
+		}
+		function openForm6() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img6").style.display = "block";				
+		}
+		function openForm7() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img7").style.display = "block";				
+		}
+		function openForm8() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img8").style.display = "block";				
+		}
+		function openForm9() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img9").style.display = "block";				
+		}
+		function openForm10() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img10").style.display = "block";				
+		}
+		function openForm11() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img11").style.display = "block";				
+		}
+		function openForm12() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img12").style.display = "block";				
+		}
+		function openForm13() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img13").style.display = "block";				
+		}
+		function openForm14() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img14").style.display = "block";				
+		}
+		function openForm15() {
+		document.getElementById("myForm").style.display = "block";
+		document.getElementById("img15").style.display = "block";				
+		}
+
+
+
+	   //Function to open the Delivery Terms Form
+	   function openDeliveryForm() {
+	   document.getElementById("myDeliveryForm").style.display = "block";
+	   }
+	   
+	   //Function to close the Order Form - close any opened images
+	   function closeForm() {
+	   document.getElementById("myForm").style.display = "none";
+	   document.getElementById("img1").style.display = "none"	
+	   document.getElementById("img2").style.display = "none"	
+	   document.getElementById("img3").style.display = "none"	
+	   document.getElementById("img4").style.display = "none"	
+	   document.getElementById("img5").style.display = "none"	
+	   document.getElementById("img6").style.display = "none"	
+	   document.getElementById("img7").style.display = "none"	
+	   document.getElementById("img8").style.display = "none"	
+	   document.getElementById("img9").style.display = "none"	
+	   document.getElementById("img10").style.display = "none"	
+	   document.getElementById("img11").style.display = "none"	
+	   document.getElementById("img12").style.display = "none"	
+	   document.getElementById("img13").style.display = "none"	
+	   document.getElementById("img14").style.display = "none"	
+	   document.getElementById("img15").style.display = "none"	
+	   
+	   document.close();
+	   }
+
+	   //Function to close the Delivery Terms Form
+	   function closeDeliveryForm() {
+	   document.getElementById("myDeliveryForm").style.display = "none";
+	   document.close();
+	   }
+
+
+   </script>
+		
+
+    <!-- Bouquet Options/Selections -->
+	<section id="bouquets">
+		<div class="center-text">
+			<h2>Our Selections</h2></div></br>
+            <hr class="line">
+		</div>
+
+		<div class="selections">
+			<div class="row">
+				<img src="img/Bouquets/bouquet-1.png" onclick="openForm1()">
+				<h4>COLOR MADNESS</h4>
+				<h5>$25.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm1()">Select</button>
+				</div>
+			</div>
+			
+
+			<div class="row">
+				<img src="img/Bouquets/bouquet-2.png"  onclick="openForm2()">
+				<h4>RED SLIM ROSES</h4>
+				<h5>$70.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm2()">Select</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="img/Bouquets/bouquet-3.png"  onclick="openForm3()">
+				<h4>PINK LOVER</h4>
+				<h5>$42.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm3()">Select</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="img/Bouquets/bouquet-4.png"  onclick="openForm4()">
+				<h4>SOFT BOUQUET</h4>
+				<h5>$30.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm4()">Select</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="img/Bouquets/bouquet-5.png"  onclick="openForm5()">
+				<h4>BEIZE BOUQUET</h4>
+				<h5>$42.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="img/Bouquets/bouquet-6.png"  onclick="openForm6()">
+				<h4>WHITE BOUQUET</h4>
+				<h5>$25.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="img/Bouquets/bouquet-7.png"  onclick="openForm7()">
+				<h4>INTENSE FLAME</h4>
+				<h5>$30.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-8.png"  onclick="openForm8()">
+				<h4>BABY PINK</h4>
+				<h5>$47.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-9.png"  onclick="openForm9()">
+				<h4>ELEGANT BOUQUET</h4>
+				<h5>$70.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-10.png"  onclick="openForm10()">
+				<h4>BABY BLUE</h4>
+				<h5>$25.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-11.png"  onclick="openForm11()">
+				<h4>CLASSIC BOUQUET</h4>
+				<h5>$42.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-12.png"  onclick="openForm12()">
+				<h4>RED ROSES BOUQUET</h4>
+				<h5>$75.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-13.png"  onclick="openForm13()">
+				<h4>PINK ROSES BOUQUET</h4>
+				<h5>$25.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-14.png"  onclick="openForm14()">
+				<h4>LIGHT BLUE BOUQUET</h4>
+				<h5>$47.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+
+            <div class="row">
+				<img src="img/Bouquets/bouquet-15.png"  onclick="openForm15()">
+				<h4>BEIZE-PINK BOUQUET</h4>
+				<h5>$30.00</h5>
+				<div class="bbtn">
+					<button onclick="openForm()">Select</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+   <!--Footer Section-->
+	<footer>
+		<p>&copy; Angela Drousiotou - Unicaf Assignment</p>
+	</footer>
+
+  </body>
+  </html>

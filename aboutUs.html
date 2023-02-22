@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers4U</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+   <!-- Link to the external Style Sheet -->
+   <link id="pagestyle" rel="stylesheet" type="text/css" href="css/aboutUs.css">
+
+   <script type="text/javascript">
+    // Get the selected theme from localStorage or use the default theme
+    var selectedTheme = localStorage.getItem('selectedTheme') || 'css/aboutUs.css';
+
+    if ((localStorage.getItem('selectedTheme') == 'css/mainstyle.css') || (localStorage.getItem('selectedTheme') == 'css/products.css')|| (localStorage.getItem('selectedTheme') == 'css/success.css'))
+	{
+		var selectedTheme = 'css/aboutUs.css';
+	}
+	else if ((localStorage.getItem('selectedTheme') == 'css/valentines.css') || (localStorage.getItem('selectedTheme') == 'css/v_products.css')|| (localStorage.getItem('selectedTheme') == 'css/v_success.css'))
+	{
+		var selectedTheme = 'css/v_aboutUs.css';
+	}
+
+    // Set the stylesheet to the selected theme
+    document.getElementById('pagestyle').setAttribute('href', selectedTheme);
+
+    // Function to change the theme
+    function change_theme(sheet) {
+    // Set the stylesheet to the selected theme
+    document.getElementById('pagestyle').setAttribute('href', sheet);
+    // Store the selected theme in localStorage
+    localStorage.setItem('selectedTheme', sheet);
+    }
+
+</script>
+   
+
+  <link rel="shortcut icon" href="img/Logo/favicon.ico"/>
+  <title>Flowers4U</title>
+
+</head>
+
+
+<body>
+	
+
+    <div class="navbar">
+        <div class="inner-width">
+            <img class="logo" src="img/Logo/logo.png">
+            
+            <!--Navbar Menu Section-->
+
+            <div class="nav"><!--navnar-menu-->
+                <ul>
+                    <li><a href="https://angeladrous.github.io/submitform/aboutUs.html">About Us</a></li>
+                    <li><a id="mybtn" href="#">Change Theme ▾</a></li>
+                        <ul class="dropdown">
+                            <li><a href="#" onclick="change_theme('css/aboutUs.css')">Default</a></li><br></br>
+                            <li><a href="#" onclick="change_theme('css/v_aboutUs.css')">Valentine's</a></li>
+                        </ul>
+                    <li><a href="https://angeladrous.github.io/submitform/products.html">Products</a></li>
+                    <li><a href="https://angeladrous.github.io/submitform/index.html">Home</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+	
+    <!---home section--->
+	<section class="home">
+		<div class="home-text">
+			<h1>Why Choose Us</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate egestas est, eu dictum quam posuere vitae. Morbi congue commodo malesuada. Nullam pellentesque ornare ultricies. Vestibulum convallis velit accumsan, tempus justo eget, auctor tortor. Nunc euismod eu felis et scelerisque. Fusce condimentum, quam at efficitur varius, diam ligula rhoncus elit, ut viverra nunc tortor vitae lectus.</br></br>Proin suscipit nisl eget consectetur scelerisque. In dolor risus, fringilla sit amet auctor ac, elementum et mauris.</p>
+        </div>
+        <img>
+	</section>
+
+
+  </body>
+  </html>

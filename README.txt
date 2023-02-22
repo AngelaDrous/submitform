@@ -1,0 +1,1 @@
+I tested the form using my email, so I provided an email sample of how the email looks like in the img folder.

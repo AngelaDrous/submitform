@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers4U</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+   <!-- Link to the external Style Sheet -->
+   <link id="pagestyle" rel="stylesheet" type="text/css" href="css/success.css">
+
+   <script type="text/javascript">
+       // Get the selected theme from localStorage or use the default theme
+       var selectedTheme = localStorage.getItem('selectedTheme') || 'css/success.css';
+
+       //Load the correct theme
+       if ((localStorage.getItem('selectedTheme') == 'css/products.css') || (localStorage.getItem('selectedTheme') == 'css/aboutUs.css') || (localStorage.getItem('selectedTheme') == 'css/mainstyle.css'))
+       {
+           var selectedTheme = 'css/success.css';
+       }
+       else if ((localStorage.getItem('selectedTheme') == 'css/v_products.css') || (localStorage.getItem('selectedTheme') == 'css/v_aboutUs.css')|| (localStorage.getItem('selectedTheme') == 'css/valentines.css'))
+       {
+           var selectedTheme = 'css/v_success.css';
+       }
+
+       // Set the stylesheet to the selected theme
+       document.getElementById('pagestyle').setAttribute('href', selectedTheme);
+
+       // Function to change the theme
+       function change_theme(sheet) {
+       // Set the stylesheet to the selected theme
+       document.getElementById('pagestyle').setAttribute('href', sheet);
+       // Store the selected theme in localStorage
+       localStorage.setItem('selectedTheme', sheet);
+       }
+   
+   </script>
+
+  <link rel="shortcut icon" href="img/Logo/favicon.ico"/>
+  <title>Flowers4U</title>
+
+</head>
+
+
+<body>
+	
+
+    <div class="navbar">
+        <div class="inner-width">
+            <img class="logo" src="img/Logo/logo.png">
+            
+            <!--Navbar Menu Section-->
+
+            <div class="nav"><!--navnar-menu-->
+                <ul>
+                    <li><a href="https://angeladrous.github.io/submitform/aboutUs.html">About Us</a></li>
+                    <li><a id="mybtn" href="#">Change Theme ▾</a></li>
+                        <ul class="dropdown">
+                            <li><a href="#" onclick="change_theme('css/success.css')">Default</a></li><br></br>
+                            <li><a href="#" onclick="change_theme('css/v_success.css')">Valentine's</a></li>
+                        </ul>
+                    <li><a href="https://angeladrous.github.io/submitform/products.html">Products</a></li>
+                    <li><a href="https://angeladrous.github.io/submitform/index.html">Home</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="success-msg">
+        <h1>Success !</h1>
+        <p>Your form was send successfully. We will get back to you very soon!</p>
+    </div>
+
+
+  </body>
+  </html>
